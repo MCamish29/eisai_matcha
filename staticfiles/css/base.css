@@ -5,9 +5,37 @@ html {
 body {
     font-family: 'Poiret One', sans-serif;
     color: #727272;
-    background: url('/media/matcha_banner.jpg') no-repeat center center fixed;
-    background-size: cover;
     height: calc(100vh - 164px);    
+}
+
+/* Image container */
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+    height: auto;
+    z-index: 1;
+}
+
+/* Make the image responsive */
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional */
+}
+
+/* Text overlay styling */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white; /* Adjust for contrast */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Improves readability */
 }
 
 /* from Bulma */
@@ -65,12 +93,9 @@ body {
     .header-container {
         padding-top: 164px;
     }
-    #blurb {
-        font-size: clamp(40px, 8vw, 100px); /* Responsive scaling */
     }
-}
 
-/* Fixed top navbar only on medium and up */
+/* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -83,23 +108,18 @@ body {
     .header-container {
         padding-top: 164px;
     }
-    #blurb {
-        font-size: clamp(32px, 6vw, 80px); /* Adjusted for mid-sized screens */
-    }
+     
 }
 
-/* Small screens (phones, etc.) */
-@media (max-width: 991px) {
-    #blurb {
-        font-size: clamp(24px, 5vw, 60px); /* Prevents text from being too small or too big */
-    }
-}
-
-@media (min-width: 290px) {
+@media (min-width: 290px){
     #logo {
         font-size: 50px;
     }
     .header-container {
         padding-top: 185px;
     }
+    #blurb {
+        font-size: 250%;
+    }
+     
 }

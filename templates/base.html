@@ -37,17 +37,16 @@
   </head>
   <body>
     <header class="container-fluid fixed-top">
-      <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">        
+      <div id="topnav" class="row bg-white pt-lg-2 d-lg-flex">        
         <div class="col-12 col-lg-9 my-auto py-1 py-large-0 d-flex justify-content">
-          <a href="{% url 'home' %}" class="nav-link main-logo-link text-right">
-            <h1 class="logo-font text-main my-0 display-3">Eisai Matcha</h1>
+          <a href="{% url 'home' %}" class="nav-link main-logo-link ">
+            <h1 class="logo-font text-main my-0 display-1" id="logo">Eisai Matcha</h1>
           </a>
         </div>        
-        <div class="col-12 col-lg-3 my-auto py-1 py-large-0 d-flex justify-content-end">
-          <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+        <div class="col-12 col-lg-3 my-auto py-1 py-large-0 d-flex justify-content-between">
+          <ul class="list-inline list-unstyled text-center text-lg-right my-0 d-flex justify-content-between w-100">
             <li class="list-inline-item dropdown">
-              <a class="text-main nav-link" href="#" id="search-dropdown" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+              <a class="text-main nav-link" href="#" id="search-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                   <div><i class="fas fa-search fa-lg"></i></div>
                   <p class="my-0">Search</p>
@@ -67,8 +66,7 @@
               </div>
             </li>
             <li class="list-inline-item dropdown">
-              <a class="text-main nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+              <a class="text-main nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                   <div><i class="fas fa-leaf fa-lg"></i></div>
                   <p class="my-0">My Account</p>
@@ -76,14 +74,14 @@
               </a>
               <div class="dropdown-menu border-0" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
-                {% if request.user.is_superuser %}
-                <a href="" class="dropdown-item">Product Management</a>
-                {% endif %}
-                <a href="" class="dropdown-item">My Profile</a>
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                  {% if request.user.is_superuser %}
+                    <a href="" class="dropdown-item">Product Management</a>
+                  {% endif %}
+                  <a href="" class="dropdown-item">My Profile</a>
+                  <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                 {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                 {% endif %}
               </div>
             </li>
@@ -103,6 +101,7 @@
             </li>
           </ul>
         </div>
+        
       </div>
     </header>
     
