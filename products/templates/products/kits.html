@@ -36,15 +36,20 @@
             <hr class="border-3 mb-5">
             <div class="row">
                 {% for kit in kits %}
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-6 col-lg-10 col-xl-6">
                         <div class="row">
-                            <div class="col-md-4 text-center">
+                            <div class="col-md-4 col-lg-6 text-center">
                                 <img src="{{ kit.image.url }}" alt="{{ kit.product_name }}" class="img-fluid">
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 col-lg-6">
                                 <h4><strong>{{ kit.product_name }}</strong></h4>
                                 <p>{{ kit.description }}</p>
                                 <p><strong>£{{ kit.price }}</strong></p>
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-10 col-lg-8 my-3 d-flex ">
+                                        <a href="" class="btn rounded py-3 shop-button w-100 text-center">Add to basket</a>
+                                    </div>
+                                </div>   
                             </div>
                         </div>
                     </div>
