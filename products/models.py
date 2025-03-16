@@ -3,6 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Category(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     category_id = models.AutoField(primary_key=True)
     category = models.CharField(max_length=50)
     created = models.DateField(auto_now_add=True)
@@ -12,6 +16,10 @@ class Category(models.Model):
         return self.category 
 
 class Country(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Countries'
+
     country_id = models.AutoField(primary_key=True)
     country = models.CharField(max_length=75)
     created = models.DateField(auto_now_add=True)
@@ -21,6 +29,10 @@ class Country(models.Model):
         return self.country
 
 class Tea(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Tea'
+
     product_id = models.AutoField(primary_key=True)
     internal_name = models.CharField(max_length=250)
     product_name = models.CharField(max_length=250, null=True, blank=True)    
@@ -38,6 +50,10 @@ class Tea(models.Model):
         return self.internal_name
 
 class Equipment(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Equipment'
+
     product_id = models.AutoField(primary_key=True)
     internal_name = models.CharField(max_length=250)
     product_name = models.CharField(max_length=250, null=True, blank=True)
