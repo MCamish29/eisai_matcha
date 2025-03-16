@@ -15,3 +15,14 @@ def all_products(request):
     }
 
     return render(request, 'products/all_products.html', context)
+
+
+def tea(request):
+    """A view to display tea products"""
+    teas = Tea.objects.all()
+
+    context = {
+        'teas': teas,
+    }
+
+    return render(request, 'products/tea.html', context)
