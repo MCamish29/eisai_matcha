@@ -29,34 +29,34 @@
 </div>
 
 <div class="container my-4">
+    
     <div class="row">
         <div class="col">
-            <h2 class="text-center display-4">Teas</h2>
+            <h2 class="text-center display-4">Kits</h2>            
             <hr class="border-3 mb-5">
             <div class="row">
-                {% for tea in teas %}
-                    <div class="col-md-6">
-                        <div class="row mb-5">
+                {% for kit in kits %}
+                    <div class="col-md-6 mb-4">
+                        <div class="row">
                             <div class="col-md-4 text-center">
-                                <img src="{{ tea.image.url }}" alt="{{ tea.product_name }}" class="img-fluid">
+                                <img src="{{ kit.image.url }}" alt="{{ kit.product_name }}" class="img-fluid">
                             </div>
                             <div class="col-md-8">
-                                <h4><strong>{{ tea.product_name }}</strong></h4> 
-                                <p>{{ tea.description }}</p>
-                                <p><strong>Blend:</strong> {{ tea.blend }}</p>
-                                <p><strong>Weight:</strong> {{ tea.weight }}g</p>
-                                <p><strong>Country of origin:</strong> {{ tea.country_of_origin }}</p>
-                                <p><strong>£{{ tea.price }}</strong></p>
+                                <h4><strong>{{ kit.product_name }}</strong></h4>
+                                <p>{{ kit.description }}</p>
+                                <p><strong>£{{ kit.price }}</strong></p>
                             </div>
                         </div>
                     </div>
                 {% empty %}
                     <div class="col-12">
-                        <p>No teas available.</p>
+                        <p>No kits available.</p>
                     </div>
                 {% endfor %}
             </div>
         </div>
     </div>
 </div>
+
+
 {% endblock %}
