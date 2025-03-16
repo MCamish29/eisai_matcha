@@ -26,3 +26,14 @@ def tea(request):
     }
 
     return render(request, 'products/tea.html', context)
+
+
+def equipment(request):
+    """A view to display tea products"""
+    equipment = Equipment.objects.all()
+
+    context = {
+        'equipment': equipment,
+    }
+
+    return render(request, 'products/equipment.html', context)

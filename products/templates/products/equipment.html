@@ -31,32 +31,32 @@
 <div class="container my-4">
     <div class="row">
         <div class="col">
-            <h2 class="text-center display-4">Teas</h2>
+            <h2 class="text-center display-4" >Equipment</h2>
             <hr class="border-3 mb-5">
             <div class="row">
-                {% for tea in teas %}
-                    <div class="col-md-6">
-                        <div class="row mb-5">
+                {% for item in equipment %}
+                    <div class="col-md-6 mb-4">
+                        <div class="row">
                             <div class="col-md-4 text-center">
-                                <img src="{{ tea.image.url }}" alt="{{ tea.product_name }}" class="img-fluid">
+                                <img src="{{ item.image.url }}" alt="{{ item.product_name }}" class="img-fluid">
                             </div>
                             <div class="col-md-8">
-                                <h4><strong>{{ tea.product_name }}</strong></h4> 
-                                <p>{{ tea.description }}</p>
-                                <p><strong>Blend:</strong> {{ tea.blend }}</p>
-                                <p><strong>Weight:</strong> {{ tea.weight }}g</p>
-                                <p><strong>Country of origin:</strong> {{ tea.country_of_origin }}</p>
-                                <p><strong>£{{ tea.price }}</strong></p>
+                                <h4><strong>{{ item.product_name }}</strong></h4>
+                                <p>{{ item.description }}</p>
+                                <p><strong>Country of origin:</strong> {{ item.country_of_origin }}</p>
+                                <p><strong>£{{ item.price }}</strong></p>
                             </div>
                         </div>
                     </div>
                 {% empty %}
                     <div class="col-12">
-                        <p>No teas available.</p>
+                        <p>No equipment available.</p>
                     </div>
                 {% endfor %}
             </div>
         </div>
     </div>
 </div>
+
+
 {% endblock %}
