@@ -31,104 +31,97 @@
 <div class="container my-4">
     <div class="row">
         <div class="col">
-            <h2 class="text-center display-4">Teas</h2>
-            <hr class="border-3 mb-5">
-            <div class="row">
-                {% for tea in teas %}
-                    <div class="col-md-6 col-lg-10 col-xl-6">
-                        <div class="row mb-5">
-                            <div class="col-md-4 col-lg-6 text-center">
-                                <img src="{{ tea.image.url }}" alt="{{ tea.product_name }}" class="img-fluid">
-                            </div>
-                            <div class="col-md-8 col-lg-6">
-                                <h4><strong>{{ tea.product_name }}</strong></h4> 
-                                <p>{{ tea.description }}</p>
-                                <p><strong>Blend:</strong> {{ tea.blend }}</p>
-                                <p><strong>Weight:</strong> {{ tea.weight }}g</p>
-                                <p><strong>Country of origin:</strong> {{ tea.country_of_origin }}</p>
-                                <p><strong>£{{ tea.price }}</strong></p>
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-10 col-lg-8 my-3 d-flex ">
-                                        <a href="" class="btn rounded py-3 shop-button w-100 text-center">Add to basket</a>
-                                    </div>
-                                </div>                                
+            {% if teas %}
+                <h2 class="text-center display-4">Teas</h2>
+                <hr class="border-3 mb-5">
+                <div class="row">
+                    {% for tea in teas %}
+                        <div class="col-md-6 col-lg-10 col-xl-6">
+                            <div class="row mb-5">
+                                <div class="col-md-4 col-lg-6 text-center">
+                                    <img src="{{ tea.image.url }}" alt="{{ tea.product_name }}" class="img-fluid">
+                                </div>
+                                <div class="col-md-8 col-lg-6">
+                                    <h4><strong>{{ tea.product_name }}</strong></h4> 
+                                    <p>{{ tea.description }}</p>
+                                    <p><strong>Blend:</strong> {{ tea.blend }}</p>
+                                    <p><strong>Weight:</strong> {{ tea.weight }}g</p>
+                                    <p><strong>Country of origin:</strong> {{ tea.country_of_origin }}</p>
+                                    <p><strong>£{{ tea.price }}</strong></p>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-10 col-lg-8 my-3 d-flex">
+                                            <a href="" class="btn rounded py-3 shop-button w-100 text-center">Add to basket</a>
+                                        </div>
+                                    </div>                                  
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {% empty %}
-                    <div class="col-12">
-                        <p>No teas available.</p>
-                    </div>
-                {% endfor %}
-            </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <h2 class="text-center display-4" >Equipment</h2>
-            <hr class="border-3 mb-5">
-            <div class="row">
-                {% for item in equipment %}
-                    <div class="col-md-6 col-lg-10 col-xl-6">
-                        <div class="row mb-5">
-                            <div class="col-md-4 col-lg-6 text-center">
-                                <img src="{{ item.image.url }}" alt="{{ item.product_name }}" class="img-fluid">
+            {% if equipment %}
+                <h2 class="text-center display-4">Equipment</h2>
+                <hr class="border-3 mb-5">
+                <div class="row">
+                    {% for item in equipment %}
+                        <div class="col-md-6 col-lg-10 col-xl-6">
+                            <div class="row mb-5">
+                                <div class="col-md-4 col-lg-6 text-center">
+                                    <img src="{{ item.image.url }}" alt="{{ item.product_name }}" class="img-fluid">
+                                </div>
+                                <div class="col-md-8 col-lg-6">
+                                    <h4><strong>{{ item.product_name }}</strong></h4>
+                                    <p>{{ item.description }}</p>
+                                    <p><strong>Country of origin:</strong> {{ item.country_of_origin }}</p>
+                                    <p><strong>£{{ item.price }}</strong></p>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-10 col-lg-8 my-3 d-flex">
+                                            <a href="" class="btn rounded py-3 shop-button w-100 text-center">Add to basket</a>
+                                        </div>
+                                    </div>   
+                                </div>
                             </div>
-                            <div class="col-md-8 col-lg-6">
-                                <h4><strong>{{ item.product_name }}</strong></h4>
-                                <p>{{ item.description }}</p>
-                                <p><strong>Country of origin:</strong> {{ item.country_of_origin }}</p>
-                                <p><strong>£{{ item.price }}</strong></p>
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-10 col-lg-8 my-3 d-flex ">
-                                        <a href="" class="btn rounded py-3 shop-button w-100 text-center">Add to basket</a>
-                                    </div>
-                                </div>   
-                            </div>
-                        </div>
-                    </div>
-                {% empty %}
-                    <div class="col-12">
-                        <p>No equipment available.</p>
-                    </div>
-                {% endfor %}
-            </div>
+                        </div>                                            
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <h2 class="text-center display-4">Kits</h2>            
-            <hr class="border-3 mb-5">
-            <div class="row">
-                {% for kit in kits %}
-                    <div class="col-md-6 col-lg-10 col-xl-6">
-                        <div class="row">
-                            <div class="col-md-4 col-lg-6 text-center">
-                                <img src="{{ kit.image.url }}" alt="{{ kit.product_name }}" class="img-fluid">
+            {% if kits %}
+                <h2 class="text-center display-4">Kits</h2>            
+                <hr class="border-3 mb-5">
+                <div class="row">
+                    {% for kit in kits %}
+                        <div class="col-md-6 col-lg-10 col-xl-6">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-6 text-center">
+                                    <img src="{{ kit.image.url }}" alt="{{ kit.product_name }}" class="img-fluid">
+                                </div>
+                                <div class="col-md-8 col-lg-6">
+                                    <h4><strong>{{ kit.product_name }}</strong></h4>
+                                    <p>{{ kit.description }}</p>
+                                    <p><strong>£{{ kit.price }}</strong></p>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-10 col-lg-8 my-3 d-flex">
+                                            <a href="" class="btn rounded py-3 shop-button w-100 text-center">Add to basket</a>
+                                        </div>
+                                    </div>   
+                                </div>
                             </div>
-                            <div class="col-md-8 col-lg-6">
-                                <h4><strong>{{ kit.product_name }}</strong></h4>
-                                <p>{{ kit.description }}</p>
-                                <p><strong>£{{ kit.price }}</strong></p>
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-10 col-lg-8 my-3 d-flex ">
-                                        <a href="" class="btn rounded py-3 shop-button w-100 text-center">Add to basket</a>
-                                    </div>
-                                </div>   
-                            </div>
-                        </div>
-                    </div>
-                {% empty %}
-                    <div class="col-12">
-                        <p>No kits available.</p>
-                    </div>
-                {% endfor %}
-            </div>
+                        </div>                    
+                    {% endfor %}
+                </div>            
+            {% endif %}
         </div>
     </div>
 </div>
-
 
 {% endblock %}

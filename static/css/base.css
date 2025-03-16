@@ -101,17 +101,15 @@ body {
 }
 
 /* Small screens (phones, etc.) */
-@media (max-width: 991px) {
+@media (min-width: 320px) {
     #blurb {
         font-size: clamp(24px, 5vw, 60px); /* Prevents text from being too small or too big */
     }
-}
-
-@media (min-width: 290px) {
     #logo {
-        font-size: 50px;
+        font-size: 250%;
     }
     .header-container {
         padding-top: 185px;
     }
 }
+
