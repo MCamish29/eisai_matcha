@@ -50,9 +50,14 @@
                                     <p><strong>£{{ tea.price }}</strong></p>
                                     <div class="row">
                                         <div class="col-sm-6 col-md-10 col-lg-8 my-3 d-flex">
-                                            <a href="" class="btn rounded py-3 shop-button w-100 text-center">Add to basket</a>
+                                            <form action="{% url 'add_to_cart' tea.product_id %}" method="POST" class="w-100 d-flex">
+                                                {% csrf_token %}
+                                                <label for="quantity-{{ tea.product_id }}" class="visually-hidden">Quantity</label>
+                                                <input type="number" name="quantity" id="quantity-{{ tea.product_id }}" min="1" value="1" class="form-control me-2" required>
+                                                <button type="submit" class="btn rounded py-3 shop-button w-100">Add to cart</button>
+                                            </form>
                                         </div>
-                                    </div>                                  
+                                    </div>                               
                                 </div>
                             </div>
                         </div>
@@ -81,9 +86,14 @@
                                     <p><strong>£{{ item.price }}</strong></p>
                                     <div class="row">
                                         <div class="col-sm-6 col-md-10 col-lg-8 my-3 d-flex">
-                                            <a href="" class="btn rounded py-3 shop-button w-100 text-center">Add to basket</a>
+                                            <form action="{% url 'add_to_cart' item.product_id %}" method="POST" class="w-100 d-flex">
+                                                {% csrf_token %}
+                                                <label for="quantity-{{ item.product_id }}" class="visually-hidden">Quantity</label>
+                                                <input type="number" name="quantity" id="quantity-{{ item.product_id }}" min="1" value="1" class="form-control me-2" required>
+                                                <button type="submit" class="btn rounded py-3 shop-button w-100">Add to cart</button>
+                                            </form>
                                         </div>
-                                    </div>   
+                                    </div>
                                 </div>
                             </div>
                         </div>                                            
@@ -111,9 +121,15 @@
                                     <p><strong>£{{ kit.price }}</strong></p>
                                     <div class="row">
                                         <div class="col-sm-6 col-md-10 col-lg-8 my-3 d-flex">
-                                            <a href="" class="btn rounded py-3 shop-button w-100 text-center">Add to basket</a>
+                                            <form action="{% url 'add_to_cart' kit.product_id %}" method="POST" class="w-100 d-flex">
+                                                {% csrf_token %}
+                                                <label for="quantity-{{ kit.product_id }}" class="visually-hidden">Quantity</label>
+                                                <input type="number" name="quantity" id="quantity-{{ kit.product_id }}" min="1" value="1" class="form-control me-2" required>
+                                                <button type="submit" class="btn rounded py-3 shop-button w-100">Add to basket</button>
+                                            </form>
                                         </div>
-                                    </div>   
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>                    

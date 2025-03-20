@@ -14,6 +14,8 @@ def cart_contents(request):
         delivery = 0
         free_delivery_delta = 0
 
+    free_delivery_threshold = settings.FREE_DELIVERY_THRESHOLD
+
     grand_total = delivery + total
 
     context = {
